@@ -15,7 +15,7 @@
             --gray: #8892b0;
         }
 
-                * {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -612,6 +612,58 @@
             color: var(--gray);
         }
 
+        /* Certificates Section */
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .certificate-card {
+            background-color: var(--light-blue);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .certificate-img-container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .certificate-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .certificate-card:hover .certificate-img {
+            transform: scale(1.05);
+        }
+
+        .certificate-content {
+            padding: 20px;
+        }
+
+        .certificate-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .certificate-content p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
         /* Contact Section */
         .contact-container {
             display: grid;
@@ -818,6 +870,7 @@
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
+                <a href="#certificates">Certificates</a>
                 <a href="#experience">Experience</a>
                 <a href="#contact">Contact</a>
             </div>
@@ -1063,6 +1116,89 @@
         </div>
     </section>
 
+    <!-- Certificates Section -->
+    <section id="certificates">
+        <h2 class="section-title">My Certificates</h2>
+        <div class="certificates-grid">
+            <!-- Certificate 1: MORA -->
+            <div class="certificate-card">
+                <div class="certificate-img-container">
+                    <img src="Images/MORA.jpg" alt="MORA Certificate" class="certificate-img">
+                </div>
+                <div class="certificate-content">
+                    <h3>Ministry of Road Transport & Highways</h3>
+                    <p>Certificate of participation in road safety awareness program</p>
+                </div>
+            </div>
+            
+            <!-- Certificate 2: Edge Impulse -->
+            <div class="certificate-card">
+                <div class="certificate-img-container">
+                    <img src="Images/Edge_impluse.jpeg" alt="Edge Impulse Certificate" class="certificate-img">
+                </div>
+                <div class="certificate-content">
+                    <h3>Edge Impulse Fundamentals</h3>
+                    <p>Certificate for completing Edge Impulse machine learning course</p>
+                </div>
+            </div>
+            
+            <!-- Certificate 3: Embedded C -->
+            <div class="certificate-card">
+                <div class="certificate-img-container">
+                    <img src="Images/Embedded_C.png" alt="Embedded C Certificate" class="certificate-img">
+                </div>
+                <div class="certificate-content">
+                    <h3>Embedded C Programming</h3>
+                    <p>Certificate of completion for internship on Embedded C Programming</p>
+                </div>
+            </div>
+            
+            <!-- Certificate 4: L&T EduTech -->
+            <div class="certificate-card">
+                <div class="certificate-img-container">
+                    <img src="Images/L_and_T EduTech.jpeg" alt="L&T EduTech Certificate" class="certificate-img">
+                </div>
+                <div class="certificate-content">
+                    <h3>L&T EduTech Industrial Training</h3>
+                    <p>Certificate for completing industrial training program</p>
+                </div>
+            </div>
+            
+            <!-- Certificate 5: Machine Learning -->
+            <div class="certificate-card">
+                <div class="certificate-img-container">
+                    <img src="Images/ML.png" alt="Machine Learning Certificate" class="certificate-img">
+                </div>
+                <div class="certificate-content">
+                    <h3>Machine Learning Fundamentals</h3>
+                    <p>Certificate for completing machine learning course</p>
+                </div>
+            </div>
+            
+            <!-- Certificate 6: Python -->
+            <div class="certificate-card">
+                <div class="certificate-img-container">
+                    <img src="Images/Python2.jpg" alt="Python Certificate" class="certificate-img">
+                </div>
+                <div class="certificate-content">
+                    <h3>Python Programming</h3>
+                    <p>Certificate for completing Python programming course</p>
+                </div>
+            </div>
+            
+            <!-- Certificate 7: SolidWorks -->
+            <div class="certificate-card">
+                <div class="certificate-img-container">
+                    <img src="Images/SolidWork.jpg" alt="SolidWorks Certificate" class="certificate-img">
+                </div>
+                <div class="certificate-content">
+                    <h3>SolidWorks CAD Design</h3>
+                    <p>Certificate for completing SolidWorks CAD design course</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Experience Section -->
     <section id="experience">
         <h2 class="section-title">Experience</h2>
@@ -1276,7 +1412,7 @@
 
         // Animate elements when they come into view
         const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.project-card, .skill-category, .timeline-item');
+            const elements = document.querySelectorAll('.project-card, .skill-category, .timeline-item, .certificate-card');
             
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
@@ -1290,7 +1426,7 @@
         };
 
         // Set initial styles
-        document.querySelectorAll('.project-card, .skill-category, .timeline-item').forEach(el => {
+        document.querySelectorAll('.project-card, .skill-category, .timeline-item, .certificate-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'all 0.5s ease';
